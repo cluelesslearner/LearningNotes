@@ -1,0 +1,21 @@
+
+4/6/2019
+Today is the first day of my learning journey to become a software developer. I've been the IT field for the pass 11 years. I always wonder that if I am good enough to land a software developer job. Yesterday I woke up and decided that I will start apply for software developer job.
+
+Yesterday, I texted some of my friends and my family to let them know that by 5/1/2020 I will apply for a software developer job. I created 57 weeks plan for studying. I don't want to lay on my bed somedays and wonder was I good enough to be a software developer.
+
+My goal is to create a blog note everydays and aiming to study for 14 hours a week. 
+
+
+Today I'm learning git.
+
+Today Tasks:
+  * Create a github account
+  * Create a github repo
+  * Clone the github repo to my local computer
+  * Add some notes to the local repo
+  * Learn about C programming languages basics.
+  * Write a hello world program in C and add the program 
+  * Learn array, and linked list data structure.
+  * Push the changes to the remote repo
+ 
