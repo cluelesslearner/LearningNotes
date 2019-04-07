@@ -1,0 +1,7 @@
+
+git init dir
+git clone repo_url
+git add
+git status
+git commit -m "commit message"
+git push repo_url (then enter repo username and password)
