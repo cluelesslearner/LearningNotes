@@ -1,0 +1,249 @@
+Ref: https://www.codingforentrepreneurs.com/blog/pipenv-virtual-environments-for-python/
+OS: MacOSX
+
+* install homebrew package manager: https://docs.brew.sh/Installation
+$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+* Install Postgresql on your Mac
+brew install postgresql
+
+* install python3 and pip package manager. Note default when install python, pip will be installed as well.
+brew install python3
+
+* How to launch python 2 interpreter
+python
+
+* How to launch python 3 interpreter
+python3
+
+* install pipenv
+pip3 install pipenv
+
+* create a folder for your project
+mkdir dev
+cd dev
+mkdir blogApp
+
+* start a virtual environment for your project
+* the command below will create a virtual environment with python 3.7 and django 2.2
+cd blogApp
+This will create the Virtualenv in location: /Users/username/.local/share/virtualenvs/VirtualenvName
+To remove a Virtualenv:
+    rm -rf /Users/username/.local/share/virtualenvs/VirtualenvName
+Note if you have a requirements.txt store inside of the blogApp folder, the pipenv command below will try to install all of the packages listed
+inside the requirements.txt. If you ran to any error, simply remove the requirements.txt before run the pipenv below.
+
+cd dev/blogApp
+pipenv --python 3.7 install django==2.2  (this will reate a Pipfile and Pipfile.lock with packages name and version in the blogApp folder)
+
+* create a source folder for the Project
+mkdir dev/blogApp/src
+
+* create a django project within the src folder
+cd src
+django-admin startproject blogApp .
+
+* activate this project's virtual environment
+pipenv shell.
+or source blogApp/bin/activate (I think this the path for old pipenv)
+or source /Users/username/.local/share/virtualenvs/VirtualenvName/bin/activate
+
+* to deactivate a virtual environment
+* within the command the terminal where the virtual environment is activate, run This
+deactivate
+
+* Install Postgresql package for your project
+pipenv shell (to activate project Virtualenv)
+pip install psycopg2
+
+* install requests package
+pipenv install requests
+
+On MacOSX if run into gcc error when install psycopg2, the the command below.
+  env LDFLAGS='-L/usr/local/lib -L/usr/local/opt/openssl/lib
+  -L/usr/local/opt/readline/lib' pip install psycopg2==2.8.2
+
+ref: https://stackoverflow.com/questions/9678408/cant-install-psycopg2-with-pip-in-virtualenv-on-mac-os-x-10-7
+
+
+* Export project requirements to a text file.
+* This file can be for documentation or use in Docker or Heroku
+pipenv shell (start project's virtualenv)
+pip freeze > dev/blogApp/requirements.txt
+For another project, you can install all the required package inside of the requirements.txt by run command below
+pipenv install -r requirements.txt
+
+
+* create a git repo for your project
+cd dev/blogApp
+git .init
+
+* update your git ignore file
+
+* add file to staging area
+git add .
+
+* commit changes
+git commit -m "beginning of time"
+
+* check git status
+git status
+
+* push changes to your github
+git push  <REMOTENAME> :<BRANCHNAME>
+
+
+* make migrations to default sql lite database
+* you can't create super user on the step below without this step.
+* This step will initially creates the needed tables.
+pipenv shell (this activate your project's virtual environment.)
+cd src
+python manage.py makemigrations
+python manage.py migrate
+
+* create a superuser for your django admin portal
+cd src
+python manage.py createsuperuser
+user: xyz
+email:
+password: enter your pw here
+
+* start the project webserver
+cd src
+python manage.py runserver
+
+* Open a web browser and go to your app http://127.0.0.1:8000
+* Open a web browser and go to your app django admin console: http://127.0.0.1:8000/admin
+  Use the username and password created above.
+
+* commit to git repo
+
+
+
+
+
+
+
+
+django setup: https://gist.github.com/harisibrahimkv/8279101
+
+https://github.com/codingforentrepreneurs/Try-Django-2.2#1-setup-your-system
+
+Below you'll want to do for sure on your system.
+
+Install Python Windows, Mac, or Linux
+
+Install Pipenv system wide
+
+Mac/Linux
+$ sudo pip install pipenv
+
+Windows
+> pip install pipenv
+
+Create your Project's Primary Folder
+
+$ mkdir Dev
+$ cd Dev
+$ mkdir blogPosts
+$ cd blogPosts
+
+Review the pipenv docs
+Initialize Pipenv
+If this seems easy, that's because it is. Starting a virtual enviroment has literally never been easier:
+
+$ cd ~/Dev/blogPosts
+$ pipenv --python 3.7
+or
+$ cd ~/Dev/venv
+$ python3 -m pipenv --python 3.7
+Note: that python3 --V is a command that works on my path. If you have errors, just use pipenv --python python or start installing with pipenv install <a-pypi-package>
+
+Did you know? We have additional options for initializing a new pipenv below?
+
+This creates a Pipfile for your project. Something that contains:
+
+[[source]]
+url = 'https://pypi.python.org/simple'
+verify_ssl = true
+name = 'pypi'
+
+[requires]
+python_version = '3.7'
+
+[packages]
+
+[dev-packages]
+# Install Packages
+Get the latest:
+
+$ pipenv install requests
+With a version:
+
+$ pipenv install django==2.0.7
+With a requirements.txt file:
+
+$ pipenv install -r requirements.txt
+
+
+
+
+1. Setup your System
+Windows: https://kirr.co/6r8wr9
+Mac: https://kirr.co/386c7f
+Linux: https://kirr.co/c3uvuu
+2. Create Virtual Environment & Install Django
+mkdir dev
+cd dev
+pipenv --python 3.6 install django==2.2
+pipenv shell
+
+
+
+
+
+3. Create Django Project
+cd /path/to/dev/folder
+mkdir src
+cd src
+django-admin startproject blogPosts .
+
+
+activate your virtual environment, after this your command prompt is changed.
+dev/blogPosts/src/lib/activate
+
+
+run pip freeze to see what package is installed on your virtual environment.
+
+makedir /home/dev
+makedir /home/dev/src
+first run
+
+$ django-admin startproject mysite
+in cmd prompt,then apply migration by
+
+cd mysite
+mysite:
+
+python manage.py makemigrations
+then
+
+python manage.py migrate
+after that
+
+python manage.py createsuperuser
+
+
+
+
+
+
+
+Install Postgresql
+On MacOSX
+if run into gcc error when install psycopg2, the the command below.
+
+env LDFLAGS='-L/usr/local/lib -L/usr/local/opt/openssl/lib
+-L/usr/local/opt/readline/lib' pip install psycopg2==2.8.2
+
+ref: https://stackoverflow.com/questions/9678408/cant-install-psycopg2-with-pip-in-virtualenv-on-mac-os-x-10-7

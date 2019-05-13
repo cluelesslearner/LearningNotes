@@ -1,0 +1,39 @@
+
+5/11/2019
+
+For the past 5 weeks, I consistently start to program 30 to 1 hours a day.
+I temporarily postpone learning on data structure and algorithms and focus on learning web development. My goal is to study or programming at least 1 hour a day. 
+
+For now I want to develop my own blog web application where I can blog about my learning. It's like a notebook for myself.
+
+Somethings I learned last 5 weeks:
+   Html
+   CSS
+   Javascript
+   Jquery 
+   Boostrap
+   Python
+   Django web framework
+   Git
+
+I had some experience working some of these. For other new topic, I just learn enough of those technology to get me started on my blob web app.
+
+The blog web app details:
+  * Frontend: HTML5, Boostrap, Jquery, some javascript
+  * Backend: python django web framework
+  * Database: PostgreSQL 
+  * Hosting: Will be host on ether Salesforce Heroku or AWS E2
+  * Version control: git, github
+  * Designer tool: dia, sketch
+  * Beta release date: 6/1/2019
+  * Version 1 date: 7/4/2019
+
+
+
+
+
+
+
+
+
+

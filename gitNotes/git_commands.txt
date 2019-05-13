@@ -1,7 +1,26 @@
 
+
+* install git
+easy_install git
+or brew install git
+
+* Clone a repo
+git clone repo_path
+
+* initialize a git repo
+cd to the project folder and run
 git init dir
-git clone repo_url
-git add
+
+* add .gitignore file to specify what files not to be include in your repo
+
+* check repo status
 git status
-git commit -m "commit message"
+
+* add file to to staging area
+git add .
+
+* commit a file to default master branch
+git commit -m "Beginning of time."
+
+* push changes to a repo
 git push repo_url (then enter repo username and password)

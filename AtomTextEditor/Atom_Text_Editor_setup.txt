@@ -1,0 +1,11 @@
+
+* install atom
+easy_install atom
+or brew install atom
+
+* Launch atom and install these packages:
+  vim-mode-plus
+  ex-mode : this allow to use external command in vim such as save (:w)
+  language-django
+  platformio-ide-terminal : this is the command prompt for atom
+  
